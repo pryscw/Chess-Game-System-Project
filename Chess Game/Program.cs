@@ -9,16 +9,8 @@ namespace Chess_Game
     {
         static void Main(string[] args)
         {
-            Posicao P;
-            P = new Posicao(3, 4);
-
-            Console.WriteLine(P);
-            Console.ReadLine();
-
-            Tabuleiro tab;
-            tab = new Tabuleiro(8, 8);
-            Console.WriteLine(tab);
-            Console.ReadLine();
+            Tabuleiro tab = new Tabuleiro(8,8);
+            Tela.imprimirTabuleiro(tab);
         }
     }
 }
