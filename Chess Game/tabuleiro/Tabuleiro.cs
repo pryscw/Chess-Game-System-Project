@@ -17,5 +17,11 @@
         {
             return pecas[linhas, colunas];
         }
+
+        public void colocarPeca(Peca p, Posicao pos)
+        {
+            pecas[pos.linha, pos.coluna] = p; // colocando a peça "p" na matriz de peças na posição específica
+            p.posicao = pos; // a posição dela será a que foi determinada
+        }
     }
 }
