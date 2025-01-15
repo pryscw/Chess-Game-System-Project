@@ -14,6 +14,11 @@ namespace Chess_Game
 
             Console.WriteLine(P);
             Console.ReadLine();
+
+            Tabuleiro tab;
+            tab = new Tabuleiro(8, 8);
+            Console.WriteLine(tab);
+            Console.ReadLine();
         }
     }
 }
