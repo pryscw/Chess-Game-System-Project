@@ -35,6 +35,29 @@ namespace xadrez
             {
                 capturadas.Add(pecaCapturada);
             }
+
+            // jogada especial >>
+            // roque pequeno
+            if (p is Rei && destino.coluna == origem.coluna + 2)
+            {
+                Posicao origemT = new Posicao(origem.linha, origem.coluna + 3);
+                Posicao destinoT = new Posicao(origem.linha, origem.coluna + 1);
+                Peca T = tab.retirarPeca(origemT);
+                T.incrementarQteMovimentos();
+                tab.colocarPeca(T, destinoT);
+            }
+
+            // roque grande
+            if (p is Rei && destino.coluna == origem.coluna - 2)
+            {
+                Posicao origemT = new Posicao(origem.linha, origem.coluna - 4);
+                Posicao destinoT = new Posicao(origem.linha, origem.coluna - 1);
+                Peca T = tab.retirarPeca(origemT);
+                T.incrementarQteMovimentos();
+                tab.colocarPeca(T, destinoT);
+            }
+
+
             return pecaCapturada;
         }
 
@@ -62,15 +85,16 @@ namespace xadrez
             {
                 xeque = false;
             }
-            if(testeXequeMate(adversaria(jogadorAtual)))
+            if (testeXequeMate(adversaria(jogadorAtual)))
             {
                 terminada = true;
-            } else
+            }
+            else
             {
                 turno++;
                 mudaJogador();
             }
-            
+
         }
 
         public void validarPosicaoDeOrigem(Posicao pos)
@@ -205,7 +229,7 @@ namespace xadrez
                             Peca pecaCapturada = executaMovimento(origem, destino);
                             bool testeXeque = estaEmXeque(cor);
                             desfazMovimento(origem, destino, pecaCapturada);
-                            if(!testeXeque)
+                            if (!testeXeque)
                             {
                                 return false;
                             }
