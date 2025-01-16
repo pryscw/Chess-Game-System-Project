@@ -1,5 +1,4 @@
-﻿using System.Security.Cryptography.X509Certificates;
-using tabuleiro;
+﻿using tabuleiro;
 using xadrez;
 
 namespace Chess_Game
