@@ -1,6 +1,6 @@
 ﻿namespace tabuleiro
 {
-    internal class Peca
+    abstract class Peca
     {
         public Posicao posicao { get; set; }
         public Cor cor { get; protected set; }
@@ -19,5 +19,11 @@
         {
             qteMovimentos++;
         }
+
+        public abstract bool[,] movimentosPossiveis(); 
+        // essa classe por ser genérica não é possivel aplicar a funcionalidade, precisaria ser expecífico
+        // então o método se tornando abstrato a classe se torna abstrata
+        // o método será aplicado para as peças do tipo Peca em expecífico
+      
     }
 }
