@@ -43,6 +43,8 @@ namespace Chess_Game
                         Console.WriteLine(ex.Message);
                     }
                 }
+                Console.Clear();
+                Tela.imprimirPartida(partida);
             }
             catch (TabuleiroException ex)
             {
